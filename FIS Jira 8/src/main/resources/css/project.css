@@ -1,0 +1,32 @@
+#wrapper1{
+	display:flex;
+	justify-content: flex-start;
+}
+#wrapper2{
+	display:flex;
+	justify-content:flex-start;
+}
+#field-group1, #field-group2,#field-group3{
+	padding-left:0;
+	padding-right:30px;
+	
+}
+#field-group4,#field-group5,#field-group6{
+	padding-left:0;
+	padding-right:30px;
+	
+}
+#wrapper1 div{
+	  flex-basis: 500px;
+	
+}
+#wrapper2 div{
+	  flex-basis: 500px;
+	
+}
+#field-group7{
+	text-align:right;
+}
+#icon1{
+	left:14%;
+}

@@ -1,0 +1,9 @@
+com.fpt.jira.example.impl.EmployeeServiceImpl
+com.fpt.jira.example.impl.ProjectServiceImpl
+com.fpt.jira.example.impl.TaskServiceImpl
+com.fpt.jira.example.repository.EmployeeRepositoryImpl
+com.fpt.jira.example.repository.ProjectRepositoryImpl
+com.fpt.jira.example.repository.TaskRepositoryImpl
+com.fpt.jira.example.rest.EmployeeRest
+com.fpt.jira.example.rest.ProjectRest
+com.fpt.jira.example.rest.TaskRest

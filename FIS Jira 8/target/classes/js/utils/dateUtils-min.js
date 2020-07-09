@@ -1,0 +1,1 @@
+var classDateUtils=function(){};classDateUtils.prototype={setupCalendarForInput:function(c,b,a,d){Calendar.setup({firstDay:0,inputField:c,button:b,align:"Br",singleClick:true,useISO8601WeekNumbers:false,showsTime:a,ifFormat:d})},formatDateToStringPattern:function(c,b){var a="";if(c==null){return a}a=moment(new Date(c)).format(b);return a}};var dateUtils=new classDateUtils();

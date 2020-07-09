@@ -1,0 +1,40 @@
+#content{
+	padding-left:10px;
+	padding-right:10px;
+}
+#wrapper1{
+	display:flex;
+	justify-content: flex-start;
+}
+#wrapper2{
+	display:flex;
+	justify-content:flex-start;
+}
+#field-group1, #field-group2,#field-group3,#field-group4{
+	padding-left:0;
+	padding-right:30px;
+	
+}
+#field-group5,#field-group6,#field-group7{
+	padding-left:0;
+	padding-right:30px;
+	
+}
+#wrapper1 div{
+	  flex-basis: 500px;
+	
+}
+#wrapper2 div{
+	  flex-basis: 355px;
+	
+}
+#field-group8{
+	text-align:right;
+}
+
+#icon1{
+	left:19%;
+}
+body{
+	max-width:100%;
+}

@@ -1,0 +1,134 @@
+$webResourceManager.requireResourcesForContext("Task")
+
+<html>
+<head>
+	<title>Project Worklog</title>
+</head>
+<body>
+<style>
+		#content {
+			background-color: white;
+			padding-right: 10px;
+			padding-left: 10px;
+		}
+</style>
+<div class="aui-page-header" style="padding: 0 !important; margin-left: 70px; margin-right: 30px; background-color: white">
+	    <div class="aui-page-header-inner">
+	        <div class="aui-page-header-main">
+	            <h1 style="text-align:center">TASK</h1>
+	        </div>
+	
+	   
+	    </div>
+	</div>
+
+<h2>Search User</h2>
+<form id="searchTaskForm" class="aui">
+		<div id="wrapper1">
+			<div id="field-group1" class="field-group">			
+			<p>ID</p>
+       			 <input class="text" type="number" id="inputTask1" name="inputTask1"/>
+    			</div>
+    			<div id="field-group2" class="field-group">
+				<p>Task Name</p>
+       				<input class="text" type="text" id="inputTask2" size="25" name="inputTask2"/>
+    			</div>
+			<div id="field-group3" class="field-group"> 
+				<p> Assignee </p>
+				<input class="text" type="text" id="inputTask3" name="inputTask3"/>
+			</div>
+			<div id="field-group4" class="field-group"> 
+				<p>Page Size<span id="icon1"class="aui-icon icon-required">(required)</span></p>
+				<input class="text" type="number" id="numberlimit" name="numberlimit"/>
+			</div>
+
+			
+		</div>
+		<div id="wrapper2">
+			<div id="field-group5" class="field-group"> 
+				<p>Project</p>
+				<input class="text" type="text" id="inputTask4" name="inputTask4"/>
+			</div>
+			
+		
+			<div id="field-group7" class="field-group">
+				<p>From: </p>
+       			 	<div style="display: table-row;">
+				<div style="display: table-cell;">
+					<input class="text date-field searchDate" size="25" type="text" style="width:210px" id="dateComboBox2" name="dateComboBox" placeholder="01/Jan/20"/>
+				</div>
+				<div style="display: table-cell; padding-left:10px">
+					<span id="icon-searchDate-create-picker2" 
+				class="aui-icon icon-default aui-icon-small aui-iconfont-calendar" 
+				original-title="Select a date">Select a date</span>
+				</div>
+				</div>
+			</div>
+			
+			<div id="field-group8" class="field-group">
+				<p>To: </p>
+       			 	<div style="display: table-row;">
+				<div style="display: table-cell;">
+					<input class="text date-field searchDate" size="25" type="text" style="width:210px" id="dateComboBox3" name="dateComboBox" placeholder="01/Jan/20"/>
+				</div>
+				<div style="display: table-cell; padding-left:10px">
+					<span id="icon-searchDate-create-picker3" 
+				class="aui-icon icon-default aui-icon-small aui-iconfont-calendar" 
+				original-title="Select a date">Select a date</span>
+				</div>
+				</div>
+			</div>
+
+
+			
+	
+    		</div>
+<div class="field-group" id="field-group9">
+       	<button id="searchbtn" class="aui-button-primary" type="submit" style="text-align: right">Search</button>
+</div>
+		
+</form>
+
+<h2>Task List:</h2>
+<div style="overflow-x:auto;">
+<table class="aui">
+    <thead>
+        <tr>
+            <th id="task">Task</th>
+            <th id="project">Project</th>
+            <th id="assignee">Assignee</th>
+            <th id="startdate">Start Date</th>
+            <th id="duedate">Due Date</th>
+            <th id="complete">%Complete</th>
+            <th id="progression">Progression</th>
+        </tr>	
+    </thead>
+    <tbody id="allTask">
+    </tbody>
+
+</table>
+</div>
+
+<br></br>
+
+
+<p>Total Page:<span id="totalPage"></span> </p>
+<p>Total Task:<span id="totalItem"></span> </p>
+<ol class="aui-nav aui-nav-pagination">
+    <li id="firstbtn" class="aui-nav-first"><a>First</a></li>
+    <li id="previousbtn" class="aui-nav-previous"><a>Prev</a></li>
+    <li>
+	<input class="text" type="number" id="pageNumber" name="pageNumber" value="1"/>
+	</li>
+    <li id="nextbtn" class="aui-nav-next"><a >Next</a></li>
+    <li id="lastbtn" class="aui-nav-last"><a >Last</a></li>
+</ol>
+
+
+<script>
+	var dateFormat = "$dateFormat";
+	var dateFormatText = "$dateFormatText";
+
+</script>
+</body>
+</html>

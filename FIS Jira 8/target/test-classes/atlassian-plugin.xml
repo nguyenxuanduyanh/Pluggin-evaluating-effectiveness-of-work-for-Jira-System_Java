@@ -1,0 +1,14 @@
+<atlassian-plugin key="com.fpt.jira.FISJiraPlugin-tests" name="FISJiraPlugin" plugins-version="2">
+    <plugin-info>
+        <description>This is the com.fpt.jira:FISJiraPlugin plugin for Atlassian JIRA.</description>
+        <version>1.0.0-SNAPSHOT</version>
+        <vendor name="FPT Information System" url="https://www.fis.com.vn/" />
+    </plugin-info>
+
+    <!-- from our base plugin -->
+    <component-import key="myComponent" interface="com.fpt.jira.api.MyPluginComponent"/>
+
+    <!-- from the product container -->
+    <component-import key="applicationProperties" interface="com.atlassian.sal.api.ApplicationProperties" />
+    
+</atlassian-plugin>

@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Atlassian-Build-Date: 2020-07-09T14:53:47+0700
+Atlassian-Plugin-Key: com.fpt.jira.FISJiraPlugin
+Bnd-LastModified: 1594281228926
+Build-Jdk: 1.8.0_251
+Built-By: macbook
+Bundle-Description: This is the com.fpt.jira:FISJiraPlugin plugin for At
+ lassian JIRA.
+Bundle-DocURL: https://www.fis.com.vn/
+Bundle-ManifestVersion: 2
+Bundle-Name: FISJiraPlugin
+Bundle-SymbolicName: com.fpt.jira.FISJiraPlugin
+Bundle-Vendor: FPT Information System
+Bundle-Version: 1.0.0.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Import-Package: com.atlassian.activeobjects.external,com.atlassian.jira.
+ component,com.atlassian.jira.config.properties,com.atlassian.jira.ofbiz
+ ,com.atlassian.jira.plugin.webfragment.conditions,com.atlassian.jira.pl
+ ugin.webfragment.model,com.atlassian.jira.security,com.atlassian.jira.u
+ ser,com.atlassian.jira.web.action,com.atlassian.plugin.spring.scanner.a
+ nnotation.component,com.atlassian.plugin.spring.scanner.annotation.impo
+ rts,javax.inject,javax.ws.rs,javax.ws.rs.core,net.java.ao,org.springfra
+ mework.stereotype
+Spring-Context: *
+Tool: Bnd-3.5.0.201709291849

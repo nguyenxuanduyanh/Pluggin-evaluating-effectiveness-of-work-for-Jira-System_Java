@@ -1,0 +1,55 @@
+{namespace exampleTable}
+
+/**
+ * @param taskList
+ */
+{template .viewAllTaskList}
+    {foreach $task in $taskList}
+    <tr taskid="{$task.id}">
+        <td >{$task.name}</td>
+        <td >{$task.project}</td>
+        <td >{$task.assignee}</td>
+        <td >{$task.from}</td>
+        <td >{$task.to}</td>
+        <td >{$task.complete}</td>
+        <td >{$task.progression} %</td>
+        
+    </tr>
+ 	{/foreach}
+{/template}
+
+/**
+ * @param employeeList
+ */
+{template .viewAllEmployeeList}
+    {foreach $employee in $employeeList}
+    <tr employeeid="{$employee.id}">
+        <td >{$employee.name}</td>
+        <td >{$employee.account}</td>
+        <td >{$employee.email}</td>
+        <td >{$employee.delayedtask}</td>
+        <td >{$employee.punctualtask}</td>
+        <td >{$employee.earlytask}</td>
+        <td >{$employee.comment}</td>
+        
+    </tr>
+ 	{/foreach}
+{/template}
+
+/**
+ * @param projectList
+ */
+{template .viewAllProjectList}
+    {foreach $project in $projectList}
+    <tr projectid="{$project.id}">
+        <td >{$project.name}</td>
+        <td >{$project.leader}</td>
+        <td >{$project.earlytask}</td>
+        <td >{$project.punctualtask}</td>
+        <td >{$project.delayedtask}</td>
+        <td >{$project.totaltask}</td>
+        <td >{$project.progression} %</td>
+        
+    </tr>
+ 	{/foreach}
+{/template}

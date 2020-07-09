@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<atlassian-plugin key="${atlassian.plugin.key}" name="${project.name}" plugins-version="2">
+  <plugin-info>
+    <description>${project.description}</description>
+    <version>${project.version}</version>
+    <vendor name="${project.organization.name}" url="${project.organization.url}"/>
+    <param name="plugin-icon">images/pluginIcon.png</param>
+    <param name="plugin-logo">images/pluginLogo.png</param>
+  </plugin-info>
+  
+  
+ 
+  
+  <!-- rest -->
+  <rest key="fisJiraRest" path="/fisJiraRest" version="1.0"></rest>
+  <!-- END rest -->
+  
+  
+ <web-item key="example-link" name="FIS Report On Menu Main Section"
+		section="system.top.navigation.bar" weight="47">
+		<label>Progression</label>
+		<link linkId="example-link" />
+	</web-item>
+<web-section key="example-section" name="FIS PM Report Links Main Section"
+		location="example-link" weight="10" />
+ <!--Task-->
+ <web-item key="task-link" name="Task Link" section="example-link/example-section" weight="50">
+    <label>Task</label>
+    <link linkId="task-link">/secure/TaskAction.jspa</link>
+  </web-item>
+  
+  <webwork1 key="view-task" name="TaskAction" class="java.lang.Object">
+    <actions>
+      <action name="com.fpt.jira.example.action.TaskAction" alias="TaskAction">
+        <view name="success">/templates/task.vm</view>
+      </action>
+    </actions>
+  </webwork1>
+  
+<!--Employee-->
+  <web-item key="employee-link" name="Employee Link" section="example-link/example-section" weight="51">
+    <label>Employee</label>
+    <link linkId="employee-link">/secure/EmployeeAction.jspa</link>
+  </web-item>
+  
+  <webwork1 key="view-employee" name="EmployeeAction" class="java.lang.Object">
+    <actions>
+      <action name="com.fpt.jira.example.action.EmployeeAction" alias="EmployeeAction">
+        <view name="success">/templates/employee.vm</view>
+      </action>
+    </actions>
+  </webwork1>
+<!--Project-->
+  <web-item key="project-link" name="Project Link" section="example-link/example-section" weight="52">
+    <label>Project</label>
+    <link linkId="projectjira-link">/secure/ProjectAction.jspa</link>
+  </web-item>
+  
+  <webwork1 key="view-project" name="ProjectAction" class="java.lang.Object">
+    <actions>
+      <action name="com.fpt.jira.example.action.ProjectAction" alias="ProjectAction">
+        <view name="success">/templates/project.vm</view>
+      </action>
+    </actions>
+  </webwork1>
+  
+ 
+
+  <!--Project Resource-->
+ <web-resource name="project resources" key="project-resources">
+    <description>The example resources Plugin</description>
+    <dependency>com.atlassian.auiplugin:ajs</dependency>
+     <dependency>com.atlassian.auiplugin:aui-inline-dialog2</dependency>
+          <dependency>com.atlassian.auiplugin:dialog2</dependency>
+     
+    
+    
+    <transformation extension="js">
+        <transformer key="jsI18n"/>
+    </transformation>
+    
+    <transformation extension="soy">
+	            <transformer key="soyTransformer"/>
+	        </transformation>
+       <resource type="download" name="example-soy.js" location="/templates/example.soy"/>
+	<resource type="download" name="moment.js" location="/js/externalLib/moment.js"/>
+	<resource type="download" name="loadingOverlay.js" location="/js/externalLib/loadingOverlay.js"/>
+	<resource type="download" name="jquery.validate.min.js" location="/js/externalLib/jquery.validate.min.js"/>
+	<resource name="additional-methods.min.js" type="download" location="/js/externalLib/additional-methods.min.js"/>
+	<resource type="download" name="dateUtils.js" location="/js/utils/dateUtils.js"/>                
+	<resource type="download" name="ajaxUtil.js" location="/js/utils/ajaxUtil.js"/>
+	<resource type="download" name="project.js" location="/js/project.js"/>
+		<resource type="download" name="project.css" location="/css/project.css"/>
+	
+    <context>Project</context>
+ </web-resource>
+   <!--Task Resource-->
+ <web-resource name="task resources" key="task-resources">
+    <description>The example resources Plugin</description>
+    <dependency>com.atlassian.auiplugin:ajs</dependency>
+     <dependency>com.atlassian.auiplugin:aui-inline-dialog2</dependency>
+          <dependency>com.atlassian.auiplugin:dialog2</dependency>
+     
+    
+    
+    <transformation extension="js">
+        <transformer key="jsI18n"/>
+    </transformation>
+    
+    <transformation extension="soy">
+	            <transformer key="soyTransformer"/>
+	        </transformation>
+       <resource type="download" name="example-soy.js" location="/templates/example.soy"/>
+	<resource type="download" name="moment.js" location="/js/externalLib/moment.js"/>
+	<resource type="download" name="loadingOverlay.js" location="/js/externalLib/loadingOverlay.js"/>
+	<resource type="download" name="jquery.validate.min.js" location="/js/externalLib/jquery.validate.min.js"/>
+	<resource name="additional-methods.min.js" type="download" location="/js/externalLib/additional-methods.min.js"/>
+	<resource type="download" name="dateUtils.js" location="/js/utils/dateUtils.js"/>                
+	<resource type="download" name="ajaxUtil.js" location="/js/utils/ajaxUtil.js"/>
+	<resource type="download" name="task.js" location="/js/task.js"/>
+		<resource type="download" name="task.css" location="/css/task.css"/>
+	
+    <context>Task</context>
+ </web-resource>
+   <!--Employee Resource-->
+<web-resource name="employee resources" key="employee-resources">
+    <description>The example resources Plugin</description>
+    <dependency>com.atlassian.auiplugin:ajs</dependency>
+     <dependency>com.atlassian.auiplugin:aui-inline-dialog2</dependency>
+          <dependency>com.atlassian.auiplugin:dialog2</dependency>
+     
+    
+    
+    <transformation extension="js">
+        <transformer key="jsI18n"/>
+    </transformation>
+    
+    <transformation extension="soy">
+	            <transformer key="soyTransformer"/>
+	        </transformation>
+       <resource type="download" name="example-soy.js" location="/templates/example.soy"/>
+	<resource type="download" name="moment.js" location="/js/externalLib/moment.js"/>
+	<resource type="download" name="loadingOverlay.js" location="/js/externalLib/loadingOverlay.js"/>
+	<resource type="download" name="jquery.validate.min.js" location="/js/externalLib/jquery.validate.min.js"/>
+	<resource name="additional-methods.min.js" type="download" location="/js/externalLib/additional-methods.min.js"/>
+	<resource type="download" name="dateUtils.js" location="/js/utils/dateUtils.js"/>                
+	<resource type="download" name="ajaxUtil.js" location="/js/utils/ajaxUtil.js"/>
+	<resource type="download" name="employee.js" location="/js/employee.js"/>
+		<resource type="download" name="employee.css" location="/css/employee.css"/>
+	
+    <context>Employee</context>
+ </web-resource>
+</atlassian-plugin>

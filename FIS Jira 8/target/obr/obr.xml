@@ -1,0 +1,29 @@
+<repository lastmodified='20200709025349.311'>
+  <resource id='com.fpt.jira.FISJiraPlugin/1.0.0.SNAPSHOT' symbolicname='com.fpt.jira.FISJiraPlugin' presentationname='FISJiraPlugin' uri='FISJiraPlugin-1.0.0-SNAPSHOT.jar' version='1.0.0.SNAPSHOT'>
+    <description>This is the com.fpt.jira:FISJiraPlugin plugin for Atlassian JIRA.</description>
+    <size>348062</size>
+    <documentation>https://www.fis.com.vn/</documentation>
+    <capability name='bundle'>
+      <p n='symbolicname' v='com.fpt.jira.FISJiraPlugin'/>
+      <p n='presentationname' v='FISJiraPlugin'/>
+      <p n='version' t='version' v='1.0.0.SNAPSHOT'/>
+      <p n='manifestversion' v='2'/>
+    </capability>
+    <require name='package' filter='(&amp;(package=com.atlassian.activeobjects.external))' extend='false' multiple='false' optional='false'>Import package com.atlassian.activeobjects.external</require>
+    <require name='package' filter='(&amp;(package=com.atlassian.jira.component))' extend='false' multiple='false' optional='false'>Import package com.atlassian.jira.component</require>
+    <require name='package' filter='(&amp;(package=com.atlassian.jira.config.properties))' extend='false' multiple='false' optional='false'>Import package com.atlassian.jira.config.properties</require>
+    <require name='package' filter='(&amp;(package=com.atlassian.jira.ofbiz))' extend='false' multiple='false' optional='false'>Import package com.atlassian.jira.ofbiz</require>
+    <require name='package' filter='(&amp;(package=com.atlassian.jira.plugin.webfragment.conditions))' extend='false' multiple='false' optional='false'>Import package com.atlassian.jira.plugin.webfragment.conditions</require>
+    <require name='package' filter='(&amp;(package=com.atlassian.jira.plugin.webfragment.model))' extend='false' multiple='false' optional='false'>Import package com.atlassian.jira.plugin.webfragment.model</require>
+    <require name='package' filter='(&amp;(package=com.atlassian.jira.security))' extend='false' multiple='false' optional='false'>Import package com.atlassian.jira.security</require>
+    <require name='package' filter='(&amp;(package=com.atlassian.jira.user))' extend='false' multiple='false' optional='false'>Import package com.atlassian.jira.user</require>
+    <require name='package' filter='(&amp;(package=com.atlassian.jira.web.action))' extend='false' multiple='false' optional='false'>Import package com.atlassian.jira.web.action</require>
+    <require name='package' filter='(&amp;(package=com.atlassian.plugin.spring.scanner.annotation.component))' extend='false' multiple='false' optional='false'>Import package com.atlassian.plugin.spring.scanner.annotation.component</require>
+    <require name='package' filter='(&amp;(package=com.atlassian.plugin.spring.scanner.annotation.imports))' extend='false' multiple='false' optional='false'>Import package com.atlassian.plugin.spring.scanner.annotation.imports</require>
+    <require name='package' filter='(&amp;(package=javax.inject))' extend='false' multiple='false' optional='false'>Import package javax.inject</require>
+    <require name='package' filter='(&amp;(package=javax.ws.rs))' extend='false' multiple='false' optional='false'>Import package javax.ws.rs</require>
+    <require name='package' filter='(&amp;(package=javax.ws.rs.core))' extend='false' multiple='false' optional='false'>Import package javax.ws.rs.core</require>
+    <require name='package' filter='(&amp;(package=net.java.ao))' extend='false' multiple='false' optional='false'>Import package net.java.ao</require>
+    <require name='package' filter='(&amp;(package=org.springframework.stereotype))' extend='false' multiple='false' optional='false'>Import package org.springframework.stereotype</require>
+  </resource>
+</repository>

@@ -1,0 +1,234 @@
+$webResourceManager.requireResourcesForContext("User")
+$webResourceManager.requireResource('com.atlassian.auiplugin:aui-date-picker')
+$webResourceManager.requireResource("com.atlassian.auiplugin:aui-form-validation")
+
+
+
+<html>
+<head>
+	<title>Project Worklog</title>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/select2/3.5.4/select2.min.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/select2-bootstrap-css/1.4.6/select2-bootstrap.min.css" /></head>
+<body>
+
+	<style>
+		#content {
+			background-color: white;
+		}
+	</style>
+	<div class="aui-page-header" style="padding: 0 !important; margin-left: 70px; margin-right: 30px; background-color: white">
+	    <div class="aui-page-header-inner">
+	        <div class="aui-page-header-main">
+	            <h1>USERS</h1>
+	        </div>
+	
+	   
+	    </div>
+	</div>
+<h2>Search Project</h2>
+<form id="searchUserForm" class="aui">
+		<div id="wrapper1">
+			<div id="field-group1" class="field-group">			
+			<p>ID</p>
+       			 <input class="text" type="text" id="inputOne1" name="inputOne1"/>
+    			</div>
+    			<div id="field-group2" class="field-group">
+				<p>Name</p>
+       				<input class="text" type="text" id="inputTwo1" size="25" name="inputTwo1"/>
+    			</div>
+			<div id="field-group3" class="field-group">
+				<p>Account</p>
+       				<input class="text" type="text" id="inputThree1" 
+name="inputThree1"/>
+    			</div>
+			<div id="field-group4" class="field-group">
+				<p>Email</p>
+
+       			 	<input class="text" type="text" id="inputFour1" name="inputFour1"/>
+    			</div>
+
+			
+		</div>
+		<div id="wrapper2">
+			<div class="field-group" id="field-group5">
+				<p>Phone</p>
+
+       			 	<input class="text" type="text" id="inputFive1" name="inputFive1"/>
+    			</div>
+		
+			<div id="field-group6" class="field-group">
+				<p>DOB</p>
+       			 	<div style="display: table-row;">
+				<div style="display: table-cell;">
+					<input class="text date-field searchDate" size="25" type="text" style="width:210px" id="dateComboBox1" name="dateComboBox" placeholder="01/Jan/20"/>
+				</div>
+				<div style="display: table-cell; padding-left:10px">
+					<span id="icon-searchDate-create-picker1" 
+				class="aui-icon icon-default aui-icon-small aui-iconfont-calendar" 
+				original-title="Select a date">Select a date</span>
+				</div>
+				</div>
+			</div>
+			
+
+			<div id="field-group7" class="field-group"> 
+				<p>Item/Page</p>
+				<input class="text" type="number" id="numberlimit" name="numberlimit"/>
+			</div>
+	
+    		</div>
+<div class="field-group" id="field-group8">
+       	<button id="searchbtn" class="aui-button-primary" type="submit">Search</button>
+</div>
+
+			
+    			
+</form>
+	<button id="dialog-show-button" class="aui-button">Create User</button>
+<section id="demo-dialog" class="aui-dialog2 aui-dialog2-small aui-layer" role="dialog" aria-hidden="true">
+            <header class="aui-dialog2-header">
+                <h2 class="aui-dialog2-header-main">User Information</h2>
+                <button class="aui-dialog2-header-close" aria-label="close">
+                    <span class="aui-icon aui-icon-small aui-iconfont-close-dialog"></span>
+                </button>
+            </header>
+            <div class="aui-dialog2-content">
+               
+		<form id="createUserForm" class="aui">                                                           
+
+    			<div class="field-group">Name
+       			 <input class="text" type="text" id="inputTwo" name="inputTwo"/>
+    			</div>
+			<div class="field-group">Account
+       		<input class="text" type="text" id="inputThree" name="inputThree"/>
+    			</div>
+			<div class="field-group">Email
+       			 <input class="text" type="text" id="inputFour" name="inputFour"/>
+    			</div>
+			<div class="field-group">Phone
+       			 <input class="text" type="text" id="inputFive" name="inputFive"/>
+    			</div>
+			<div class="field-group">Date of birth
+       			 <div style="display: table-row;">
+				<div style="display: table-cell;">
+					<input class="text date-field searchDate" type="text" style="width:210px" id="dateComboBox" name="dateComboBox" placeholder="01/Jan/20"/>
+				</div>
+				<div style="display: table-cell; padding-left:10px">
+			<span id="icon-searchDate-create-picker" 
+				class="aui-icon icon-default aui-icon-small aui-iconfont-calendar" 
+				original-title="Select a date">Select a date</span>
+				</div>
+			</div>
+
+    			</div>
+
+			
+    			<div class="field-group" >
+       		 		<button class="aui-button-primary" id="dialog-submit-button" type="submit">Create</button>
+    			</div>
+		</form>           
+	 </div>
+            <footer class="aui-dialog2-footer">
+            </footer>
+        </section>
+
+<div id="userList"></div>
+<h2>User List:</h2>
+
+<table class="aui">
+    <thead>
+        <tr>
+            <th id="name">Name</th>
+            <th id="account">Account</th>
+            <th id="email">Email</th>
+            <th id="phone">Phone</th>
+            <th id="birthday">Birthday</th>
+        </tr>
+    </thead>
+    <tbody id="Alluser">
+            </tbody>
+</table>
+
+<div class="container">
+  <div >
+    <h1>select2 with pagination</h1>
+    <p>for improved performance with large data sets (20 000 items)</p>
+   </div>
+        <input id="test" style="width:100%;" placeholder="type a number, scroll for more results" />
+    </div>
+<br></br>
+
+<p>Total Page:<span id="totalPage"></span> </p>
+<p>Total items:<span id="totalItem"></span> </p>
+<ol class="aui-nav aui-nav-pagination">
+    <li id="firstbtn" class="aui-nav-first"><a>First</a></li>
+    <li id="previousbtn" class="aui-nav-previous"><a>Prev</a></li>
+    <li>
+	<input class="text" type="number" id="pageNumber" name="pageNumber" value="1"/>
+	</li>
+    <li id="nextbtn" class="aui-nav-next"><a >Next</a></li>
+    <li id="lastbtn" class="aui-nav-last"><a >Last</a></li>
+</ol>
+
+
+
+
+<section id="demo-dialog3" class="aui-dialog2 aui-dialog2-small aui-layer" role="dialog" aria-hidden="true">
+            <header class="aui-dialog2-header">
+                <h2 class="aui-dialog2-header-main">User Information</h2>
+                <button class="aui-dialog2-header-close" aria-label="close">
+                    <span class="aui-icon aui-icon-small aui-iconfont-close-dialog"></span>
+                </button>
+            </header>
+            <div class="aui-dialog2-content">
+               
+		<form id="editUserForm" class="aui">
+			<div class="field-group">Name
+       			 <input class="text" type="hidden" id="inputOne2" name="inputOne2"/>
+    			</div>
+    			<div class="field-group">Name
+       			 <input class="text" type="text" id="inputTwo2" name="inputTwo2"/>
+    			</div>
+			<div class="field-group">Account
+       		<input class="text" type="text" id="inputThree2" name="inputThree2"/>
+    			</div>
+			<div class="field-group">Email
+       			 <input class="text" type="text" id="inputFour2" name="inputFour2"/>
+    			</div>
+			<div class="field-group">Phone
+       			 <input class="text" type="text" id="inputFive2" name="inputFive2"/>
+    			</div>
+			<div class="field-group">Date of birth
+       			 <div style="display: table-row;">
+				<div style="display: table-cell;">
+					<input class="text date-field searchDate" type="text" style="width:210px" id="dateComboBox2" name="dateComboBox" placeholder="01/Jan/20"/>
+				</div>
+				<div style="display: table-cell; padding-left:10px">
+			<span id="icon-searchDate-create-picker2" 
+				class="aui-icon icon-default aui-icon-small aui-iconfont-calendar" 
+				original-title="Select a date">Select a date</span>
+				</div>
+			</div>
+
+    			</div>
+
+			
+    			<div class="field-group">
+       		 	<button id="#dialog-submit-button3" class="aui-button-primary" type="submit">Edit</button>
+    			</div>
+		</form>            </div>
+            <footer class="aui-dialog2-footer">
+            </footer>
+        </section>
+
+
+	<script>
+		var dateFormat = "$dateFormat";
+		var dateFormatText = "$dateFormatText";
+
+	</script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/4.15.0/lodash.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/select2/3.5.4/select2.min.js"></script>
+</body>
+</html>
