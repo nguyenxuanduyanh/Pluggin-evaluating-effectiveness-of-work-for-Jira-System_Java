@@ -8,6 +8,13 @@ public class ProjectEntityDto {
 	private int earlytask;
 	private int delayedtask;
 	private int totaltask;
+	private double progression;
+	public double getProgression() {
+		return progression;
+	}
+	public void setProgression(double progression) {
+		this.progression = progression;
+	}
 	public int getId() {
 		return id;
 	}
@@ -51,7 +58,7 @@ public class ProjectEntityDto {
 	public void setLeader(String leader) {
 		this.leader = leader;
 	}
-	public ProjectEntityDto(int id, String name,String leader, int punctualtask, int earlytask, int delayedtask, int totaltask) {
+	public ProjectEntityDto(int id, String name,String leader, int punctualtask, int earlytask, int delayedtask, int totaltask, double progression) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -60,6 +67,7 @@ public class ProjectEntityDto {
 		this.earlytask = earlytask;
 		this.delayedtask = delayedtask;
 		this.totaltask = totaltask;
+		this.progression=progression;
 	}
 	public ProjectEntityDto() {
 		// TODO Auto-generated constructor stub

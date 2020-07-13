@@ -101,7 +101,8 @@ if(to !=null) {
 				double totalDay=0;
 				double diffDay=0;
 				double percentDay=0;
-				double progression=0;
+				double task_progression=0;
+				double project_progression=0;
 				try {
 					
 					SimpleDateFormat formatter = new SimpleDateFormat("dd/MMM/yy");
@@ -121,7 +122,7 @@ if(to !=null) {
 					totalDay= (to.getTime()-from.getTime())/(24 * 60 * 60 * 1000);
 					if(current.getTime()<from.getTime()) {
 					
-						progression=0;
+						task_progression=0;
 					}
 					else {
 						diffDay=((current.getTime()-from.getTime())/(24 * 60 * 60 * 1000))+1;
@@ -131,10 +132,10 @@ if(to !=null) {
 						else {
 							percentDay=100;
 						}
-						progression= taskEntityDto.getComplete()/percentDay*100;
+						task_progression= taskEntityDto.getComplete()/percentDay*100;
 						
 					}
-					taskEntityDto.setProgression(round(progression,0));
+					taskEntityDto.setProgression(round(task_progression,0));
 				}
 		
 				for(int i=0;i<projectEntityDtoList.size();i++) {
@@ -158,12 +159,13 @@ if(to !=null) {
 							
 					}
 				}
+					project_progression=((double)(early_task+punctual_task))/totaltask*100;
 					projectEntityDtoList.get(i).setTotaltask(totaltask);
 
 					projectEntityDtoList.get(i).setPunctualtask(punctual_task);
 					projectEntityDtoList.get(i).setEarlytask(early_task);
 					projectEntityDtoList.get(i).setDelayedtask(delayed_task);
-					
+					projectEntityDtoList.get(i).setProgression(round(project_progression,0));
 			}
 				
 				

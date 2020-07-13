@@ -46,7 +46,7 @@ public class ProjectRepositoryImpl implements ProjectRepository {
 					queryString.append(" AND o.id = '" + id + "' " );
 				}
 				if(name != null && !name.equals("")) {
-					queryString.append(" AND o.display_name = '" + name + "' " );
+					queryString.append(" AND o.pname = '" + name + "' " );
 				}
 				if( leader!= null && !leader.equals("")) {
 					queryString.append(" AND o.lead = '" + leader + "' " );

@@ -28,7 +28,7 @@ implements TaskRepository{
 	private final String COMPLETE_FIELD = "COMPLETE";
 
 	private final String STARTDATE_FIELD = "STARTDATE";
-	private final String DUEDATE_FIELD = "DUEDATE";	
+	private final String DUEDATE_FIELD = "TODATE";	
 	
 
 	

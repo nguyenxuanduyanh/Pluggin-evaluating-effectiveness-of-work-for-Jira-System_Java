@@ -76,6 +76,7 @@ AJS.toInit(function() {
         	var currentCreate = {
         			"id":$("#inputProject1").val(),
         			"name":$("#inputProject2").val(),
+        			"leader":$('#inputProject3').val(),
         			"fromStr":$("#dateComboBox1").val(),
         			"toStr":$("#dateComboBox2").val(),
         			"recordsPerPage":$("#numberlimit").val(),
@@ -103,8 +104,8 @@ function searchSuccessFunction(data){
 
 	$("#totalPage").html(data.totalPage); 
 	$("#totalItem").html(data.totalItem);
-AJS.$("#nextbtn").unbind();
 	
+	AJS.$("#nextbtn").unbind();
 	AJS.$("#nextbtn").on('click',function(e){
 		
 		if(parseInt($("#pageNumber").val())<data.totalPage){

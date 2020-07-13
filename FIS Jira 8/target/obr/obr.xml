@@ -1,7 +1,7 @@
-<repository lastmodified='20200709025349.311'>
+<repository lastmodified='20200713100750.837'>
   <resource id='com.fpt.jira.FISJiraPlugin/1.0.0.SNAPSHOT' symbolicname='com.fpt.jira.FISJiraPlugin' presentationname='FISJiraPlugin' uri='FISJiraPlugin-1.0.0-SNAPSHOT.jar' version='1.0.0.SNAPSHOT'>
     <description>This is the com.fpt.jira:FISJiraPlugin plugin for Atlassian JIRA.</description>
-    <size>348062</size>
+    <size>348229</size>
     <documentation>https://www.fis.com.vn/</documentation>
     <capability name='bundle'>
       <p n='symbolicname' v='com.fpt.jira.FISJiraPlugin'/>

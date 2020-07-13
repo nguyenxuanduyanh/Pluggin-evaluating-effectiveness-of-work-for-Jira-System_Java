@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
-Atlassian-Build-Date: 2020-07-09T14:53:47+0700
+Atlassian-Build-Date: 2020-07-13T10:07:49+0700
 Atlassian-Plugin-Key: com.fpt.jira.FISJiraPlugin
-Bnd-LastModified: 1594281228926
+Bnd-LastModified: 1594609670442
 Build-Jdk: 1.8.0_251
 Built-By: macbook
 Bundle-Description: This is the com.fpt.jira:FISJiraPlugin plugin for At
